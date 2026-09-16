@@ -43,7 +43,7 @@ Two children, stacked 24h view with the overlap band highlighted. **Shipped.**
 - Local-only/no-account: two schedules still live in the URL/on-device.
 
 ## Evidence & citations
-Tier 3 wake-window ranges per child (research files 00/02); the alignment approach and range guardrail are from file 05 Brief 2. Sources: Smart Sleep Coach (parallel timers), TwinTracker.
+Tier 2 wake-window ranges per child (research files 00/02); the alignment approach and range guardrail are from file 05 Brief 2. Sources: Smart Sleep Coach (parallel timers), TwinTracker.
 
 ## Effort
 Medium — the generator already exists; this is a second instance + an overlap calc + a stacked view.

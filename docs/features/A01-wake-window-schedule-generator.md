@@ -25,12 +25,12 @@ Huckleberry (SweetSpot) and Napper both predict, but as app-only, account-gated,
 ## Our approach (spec)
 Deterministic arithmetic, no model:
 1. Compute age (adjusted if preterm — see A03).
-2. Look up the age-band wake window range (Tier 3 table below).
+2. Look up the age-band wake window range (Tier 2 table below).
 3. Look up typical nap count for the band.
 4. From wake time, lay out: window → nap → window → nap ... to bedtime.
 5. Apply the convention **first window shortest, last window longest**, distributing the range across the day.
 6. Each window **includes feeding time** — everything the baby is awake for counts, and the window does not reset after a feed.
-Show every step: "Wake 7:00 + first window 2h → nap ~9:00." Attach a Tier 3 badge + citation to the window numbers and a Tier 1 badge to the 24h-total sanity check (AASM 2016 / NSF 2015).
+Show every step: "Wake 7:00 + first window 2h → nap ~9:00." Attach a Tier 2 badge + citation to the window numbers and a Tier 1 badge to the 24h-total sanity check (AASM 2016 / NSF 2015).
 
 ### Where a window starts and ends
 Shipped in the **"What counts as awake?"** panel (`WindowMechanics.vue`), under the nap schedule:
@@ -71,17 +71,17 @@ Applying one replaces the wake-window array in place; every window stays editabl
 - Nap caps stay a suggestion, not an alarm: no timer, no "wake the baby now" prompt. A baby sleeping through a needed feed is routed to the pediatrician, not to a schedule answer.
 
 ## Evidence & citations
-- Wake-window numbers: **Tier 3** heuristic; sources disagree (Taking Cara Babies, Huckleberry, Cleveland Clinic). Label as guidance.
+- Wake-window numbers: **Tier 2** practice-based heuristic; sources disagree (Taking Cara Babies, Huckleberry, Cleveland Clinic). Label as guidance. The *boundary definitions* underneath them are a separate, weaker claim — **Tier 3** practitioner convention (`WindowMechanics.vue`).
 - 24h totals: **Tier 1** — AASM 2016 (4–12 mo: 12–16h), NSF 2015 (0–3 mo: 14–17h).
 - Conventions (first-shortest/last-longest, includes feeding, window boundaries): research 01 §2; the boundary disagreement between published sources is research 08 T2.
 - Nap caps: **Tier 3** convention (`tcb-wake-sleeping`, `huckleberry-day-sleep`, `mayo-baby-naps`) shown against **Tier 1** actigraphy (`reynaud-2026-bmc`: in 2–5-year-olds an extra hour of napping cost ~14 min of night sleep, and nap *end time* mattered more than length — adjacent-age evidence, applied loosely under two).
-- Named templates: **Tier 3** community shorthand (research 08 T9). No study tests "2-3-4"; the doc-facing claim is only that these are the shapes parents search for.
+- Named templates: **Tier 2** — `citations.json` files "specific sample nap schedules" under Tier 2, and `agePages.ts` calls 2-3-4 "a practice-based convention rather than a validated rule". Community shorthand (research 08 T9); no study tests "2-3-4", and the doc-facing claim is only that these are the shapes parents search for. The template chips in `ChildInputs.vue` carry no badge of their own — they fill the wake-window inputs, which are badged Tier 2. **`docs/research/01-wake-window-science.md` still disagrees**, calling a numbered wake-window system Tier 3: it predates `citations.json` and uses the older taxonomy (Tier 2 = "Moderate/observational", Tier 3 = "Consultant heuristic") rather than the shipped one (Tier 2 = "Practice-based heuristic", Tier 3 = "Practitioner convention"). The shipped tiers win here because they are what the badge renders; retiering the research file is a human pass across all of it, not a per-feature edit.
 
 ## Effort
 Medium. Pure arithmetic + a citation/badge layer; no backend, no model.
 
 ## Risks / open questions
-- Presenting heuristic numbers with authority they don't have — mitigated by the Tier 3 badge and honest "guidance, not a rule" copy.
+- Presenting heuristic numbers with authority they don't have — mitigated by the Tier 2 badge and honest "guidance, not a rule" copy.
 - How prominently to nudge toward cues under 6 months without undercutting the tool's usefulness.
 
 ## Success metric

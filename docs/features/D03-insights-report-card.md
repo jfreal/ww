@@ -43,7 +43,7 @@ Nap-transition heads-up (ties to A06), feed-pattern notes, "atypical day" awaren
 - Every suggestion is optional and captioned as guidance (Tier 3).
 
 ## Evidence & citations
-Total-sleep and safety anchors: AASM 2016 / NSF 2015 / AAP 2022 (Tier 1). Nap counts, wake windows, drift-correction technique: Tier 3, labeled. Normal-variation framing: Iglowstein 2003 (Tier 2).
+Total-sleep and safety anchors: AASM 2016 / NSF 2015 / AAP 2022 (Tier 1). Nap counts: Tier 1. Wake windows: Tier 2. Drift-correction technique: Tier 3. All labeled. Normal-variation framing: Iglowstein 2003 (`iglowstein-2003`, Tier 1).
 
 ## Effort
 Medium. A small rules engine + carefully written copy; no ML. Reuses D01 aggregations.

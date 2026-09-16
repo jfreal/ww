@@ -23,12 +23,16 @@ Reviews praise apps that feel accurate but distrust "magic" predictions they can
 Huckleberry cites named advisors and a Harvard pilot at the brand level but does not tier or cite individual in-app recommendations. Napper uses unnamed experts. Trackers (Baby Tracker, Glow, Nara) offer no sourcing. Nobody shows a per-recommendation badge + citation.
 
 ## Our approach (spec)
-Every sleep recommendation renders a small **Tier badge** plus a one-tap citation:
-- **T1 — Strong** (AAP/AASM policy, RCTs, consensus): health/safety and 24h totals.
-- **T2 — Moderate** (cohort/descriptive, e.g. Mindell 2016, Iglowstein 2003): "typical" patterns.
-- **T3 — Heuristic** (practitioner conventions): wake-window minutes, nap-transition ages.
+Every sleep recommendation renders a small **Tier badge** plus a one-tap citation. The three tiers, their labels, and what each covers are defined once in `src/data/citations.json` (`tiers`) and read through `getTier()` in `src/models/Citations.ts`, so a badge on screen and this list cannot disagree:
+- **Tier 1 — Evidence-based** (expert consensus statements, peer-reviewed normative data): total sleep per 24h, broad nap-count trajectories, sleep-consolidation and circadian-development timelines, safe-sleep practices.
+- **Tier 2 — Practice-based heuristic** (consultant and parenting frameworks, validated by no trial, cohort study, or systematic review): specific wake-window durations by age, and specific sample nap schedules.
+- **Tier 3 — Practitioner convention**: daylight-saving and time-zone shift plans, and troubleshooter answers — likely causes and range-based fixes for early rising, short naps, and night wakings.
 
-Badges are **color-blind-safe**: distinct shape + text label, never color alone (e.g. filled shield = T1, half shield = T2, dotted outline = T3). Tapping a badge opens a citation card: plain-language claim, tier meaning, named source, and link to B02. Wake-window numbers always show the T3 badge and a "guidance, not a medical rule" line.
+**`appliesTo` is the copy shown to readers, not the enforced scope.** Each bullet above quotes that tier's `appliesTo` string, which `SourcesEvidence.vue` renders verbatim under "Applies to:". Nothing checks a badge against it, and Tier 3's string is currently narrower than what the app actually badges Tier 3: window-boundary definitions (`WindowMechanics.vue`) and the nap-transition prompt (`NapTransition.vue`) both render `tier="3"` without appearing in it. **That is a gap in `citations.json`, not in these specs** — widening the string is a change to reader-facing product copy and belongs to a human, not to a docs sweep.
+
+Wake-window *lengths* are Tier 2, not Tier 3. `HowCalculated.vue` says so on screen — "the only judgment call — a practice-based heuristic (Tier 2)" — as does the "Longest awake stretch" sheet in `NormalRanges.vue`. The weaker Tier 3 claim underneath it is where a window *starts and ends* (`WindowMechanics.vue`), which published sources genuinely define differently.
+
+Badges are **color-blind-safe**: distinct shape + text label, never color alone — `TierBadge.vue` pairs a glyph (filled `●` = Tier 1, half `◐` = Tier 2, hollow `○` = Tier 3) with the tier's written short label and name, and mixes the pill background *from* the tier colour so ink and tint can never fall out of step. Tapping a badge opens a citation card: plain-language claim, tier meaning, named source, and link to B02. Wake-window numbers always show the Tier 2 badge and a "guidance, not a medical rule" line.
 
 ## Scope — MVP
 Tier badge + citation card on: 24h total check, wake-window ranges, safe-sleep panel. Static tier/source mapping. Accessible (shape+text, screen-reader labels).
@@ -47,7 +51,7 @@ Badges on troubleshooter answers (B05), regression explainer (B06), sleep-traini
 - T3 must never visually outrank T1 — keep hierarchy clear.
 
 ## Evidence & citations
-Tier framework and numbers from research 00/01. T1: AASM 2016 (Paruthi), NSF 2015 (Hirshkowitz), AAP 2022 safe sleep. T2: Mindell 2016 (PubMed 27252030), Iglowstein 2003. T3: Taking Cara Babies / Huckleberry / Cleveland Clinic wake-window charts (which disagree — itself proof they are heuristics). Canapari: wake windows are "not taught, discussed, or researched in pediatric sleep medicine."
+Tier framework and numbers from research 00/01; every tier below is the one the source carries in `src/data/citations.json`. Tier 1: AASM 2016 (`paruthi-2016`), NSF 2015 (`hirshkowitz-2015`), AAP 2022 safe sleep, and the cohort work — Mindell 2016 (`mindell-2016-app`) and Iglowstein 2003 (`iglowstein-2003`). Tier 2: the wake-window charts — Taking Cara Babies (`tcb-wake-windows`), Huckleberry (`huckleberry-expectations`), Cleveland Clinic (`cleveland-wake-windows`) — which disagree with each other, itself proof they are heuristics; and Canapari (`canapari-critique`), who says wake windows are "not taught, discussed, or researched in pediatric sleep medicine." Tier 3 holds the narrower practitioner answers: nap transitions (`huckleberry-nap-transitions`), short naps and early waking (`tcb-short-naps`, `tcb-early-waking`, `huckleberry-early-risers`).
 
 ## Effort
 Medium. Design system for badges + citation card; a maintained claim→tier→source table. No backend.

@@ -45,7 +45,7 @@ Today totals block (sleep h:m, nap count) + a 7-day sleep-total sparkline. Tap-t
 - **Partial logging is invisible to the math.** A day where only two naps got entered counts as a whole day, and a day with nothing logged is skipped entirely rather than averaged in as zero. Neither can be detected from the log, so the observed-average line discloses its sample instead of pretending to a complete record.
 
 ## Evidence & citations
-Total-sleep context bands: AASM 2016 (12–16 h at 4–12 mo) and NSF 2015 (14–17 h at 0–3 mo) — Tier 1. Wake-window/nap-count context is Tier 3, labeled as guidance.
+Total-sleep context bands: AASM 2016 (12–16 h at 4–12 mo) and NSF 2015 (14–17 h at 0–3 mo) — Tier 1. Wake-window context is Tier 2 and nap-count context is Tier 1 (`citations.json` files broad nap-count trajectories under Tier 1, and the "Nap count" sheet in `NormalRanges.vue` is `tier: 1`); both stay labeled as guidance.
 
 ## Effort
 Low–Medium. Aggregation over local logs plus a lightweight sparkline; reuses the 24h-visual data layer.

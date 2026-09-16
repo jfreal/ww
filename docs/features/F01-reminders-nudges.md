@@ -44,7 +44,7 @@ One nudge type, off by default, opt-in per session: a "wind-down soon" heads-up 
 - No account means schedules are per-device; a nudge fires only where opted in.
 
 ## Evidence & citations
-FEATURE-INDEX most-loved and most-hated lists; master research names reminders as table-stakes and Glow's notification spam as a landmine. Wake-window ranges are Tier 3 heuristic guidance (master research), so copy must frame windows as ranges.
+FEATURE-INDEX most-loved and most-hated lists; master research names reminders as table-stakes and Glow's notification spam as a landmine. Wake-window ranges are Tier 2 practice-based heuristic guidance (master research), so copy must frame windows as ranges.
 
 ## Effort
 Medium. Service-worker push plumbing + permission UX is the bulk; scheduling logic reuses the existing plan.
