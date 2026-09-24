@@ -109,6 +109,12 @@ The largest single query in the set (cluster 1 is bigger in total), and the one
 furthest from what the app does today. Angle that keeps it honest: "is this a regression or just the wrong wake
 window?" — send readers into the planner and the transition detector.
 
+**Sourcing:** [`10-sleep-regressions-sourcing.md`](10-sleep-regressions-sourcing.md) lists every
+claim each page would make, with sources, tiers and an evidence/convention label. Read it
+before writing any page. In short: the 4-month brain change is solid, but no study shows a
+4-month rise in waking. The motor-milestone link is real but small. The 12- and 18-month
+"regressions" have no population evidence, and no study supports "2–6 weeks".
+
 ## Cluster 5 — Nap troubleshooting
 
 Hub: `/nap-help` (feeds the existing sleep troubleshooter)

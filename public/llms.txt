@@ -42,4 +42,4 @@ for that age.
 
 - Informational only, not medical advice. Infant sleep needs vary widely; families should consult their pediatrician.
 - No LLM, no black box, nothing trained on user data. No account, no data sold, local-first storage with one-click delete.
-- Full citation list (60 sources, by tier) is available in the "Sources & Evidence" section of the app.
+- Full citation list (97 sources, by tier) is available in the "Sources & Evidence" section of the app.
