@@ -54,6 +54,18 @@ describe('FAQ data integrity', () => {
         }
     });
 
+    // research/10 (H11, F12): no source gives the "regression" a duration — the
+    // popular 2–6 weeks is blog-only. The answer rests on the permanent brain
+    // change and the population studies instead.
+    it('the 4-month regression answer states no duration', () => {
+        const entry = faqEntries.find((e) => e.id === 'regression-4mo');
+        expect(entry).toBeDefined();
+        expect(entry!.answer).not.toMatch(/\d\s*[–-]\s*\d+\s*weeks?/);
+        expect(entry!.sourceIds).toEqual(
+            expect.arrayContaining(['grigg-damberger-2007', 'scher-1991', 'gilchrist-2025-frontiers']),
+        );
+    });
+
     it('covers the highest-frequency themes from the research sweep', () => {
         const ids = new Set(faqEntries.map((e) => e.id));
         // The top-ten FAQ themes (research/07) that had no prior app coverage.

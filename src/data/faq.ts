@@ -213,13 +213,15 @@ export const faqEntries: FaqEntry[] = [
     },
     {
         id: 'regression-4mo',
-        question: 'How long does the 4-month sleep regression last?',
+        question: 'The 4-month sleep regression — what is it, and how long does it last?',
         answer:
-            'The change is permanent — sleep reorganizing into adult-style cycles — but the disruption '
-            + 'typically smooths out over about 2–6 weeks. It\'s maturation, not a setback, and nothing '
-            + 'you did caused it.',
+            'Around 4 months, sleep starts to organize into adult-style stages, and that brain change is '
+            + 'permanent — it only moves forward. No study has measured how long any unsettled stretch '
+            + 'lasts, and studies that follow many babies have not shown a rise in night waking at 4 '
+            + 'months. If your baby\'s sleep shifts, it\'s maturation, not a setback, and nothing you did '
+            + 'caused it.',
         tier: 1,
-        sourceIds: ['henderson-2010', 'sleepfoundation-4mo-regression'],
+        sourceIds: ['grigg-damberger-2007', 'scher-1991', 'gilchrist-2025-frontiers'],
         inApp: 'the regressions explainer below',
     },
 ]

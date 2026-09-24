@@ -102,7 +102,7 @@ Runners-up: "How long does the 4-month regression last?", "Wake windows or sleep
 
 ### 10. Regressions
 
-- **Q: ★ The 4-month regression — what and how long?** — A: Permanent sleep-cycle maturation at 3–4m; disruption typically 2–6 weeks; independent settling speeds recovery; naps go 30–45min too. *(Huckleberry 4-month; Sleep Foundation)*
+- **Q: ★ The 4-month regression — what and how long?** — A: Permanent sleep-cycle maturation at 3–4m; no sourced duration (the popular "2–6 weeks" is blog-only — see research/10 H11/F12); population studies have not shown a 4-month rise in night waking (research/10 F9); independent settling speeds recovery; naps go 30–45min too. *(Huckleberry 4-month; Sleep Foundation)*
 - **Q: Is the 12-month regression real?** — A: No biological evidence — usually a schedule that needs adjusting. *(Huckleberry first-year)*
 
 ### 11. Daycare

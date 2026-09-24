@@ -205,6 +205,18 @@ describe('shipped trees (spec B05)', () => {
         }
     });
 
+    // research/10 (E10, T6, X10): no source times a developmental "regression",
+    // so no leaf may promise one settles within N weeks.
+    it('no leaf states how long a developmental stretch lasts', () => {
+        for (const tree of troubleshooterTrees) {
+            for (const node of tree.nodes) {
+                if (node.kind !== 'leaf') continue;
+                const text = [...node.body, node.suggestion ?? '', node.patienceNote ?? ''].join(' ');
+                expect(text, `${tree.id}/${node.id}`).not.toMatch(/2\s*[–-]\s*6 weeks/);
+            }
+        }
+    });
+
     it('cites the practitioner set named in the spec', () => {
         const orgs = new Set<string>();
         for (const tree of troubleshooterTrees) {
