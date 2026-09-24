@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import llmsTxt from '../../public/llms.txt?raw';
 import {
     ageBandForMonths,
     recommendationForMonths,
@@ -111,6 +112,14 @@ describe('sleep-regression cluster sources (docs/research/10)', () => {
     it('has no duplicate source ids', () => {
         const ids = sources.map((s) => s.id);
         expect(new Set(ids).size).toBe(ids.length);
+    });
+});
+
+describe('public/llms.txt', () => {
+    // llms.txt is a static file; its source count drifted once (60 vs 82).
+    it('states the real number of sources', () => {
+        const stated = llmsTxt.match(/\((\d+) sources, by tier\)/)?.[1];
+        expect(Number(stated)).toBe(sources.length);
     });
 });
 
