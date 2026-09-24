@@ -503,14 +503,14 @@ const nightWaking: TroubleshooterTree = {
                leafKind: 'advice',
                title: 'Likely developmental — protect the schedule and wait',
                body: [
-                    'New motor skills (rolling, crawling, pulling to stand) and looming nap transitions temporarily disrupt night sleep — babies literally practice mid-night. It resolves on its own; the main job is not to build new habits while it passes.',
+                    'New motor skills (rolling, crawling, pulling to stand) and looming nap transitions can unsettle night sleep for a while — starting to crawl, for example, is linked to more night waking. It tends to pass on its own; the main job is not to build new habits while it does.',
                ],
                suggestion:
                     'Keep mid-night responses dark, brief, and boring; give lots of daytime practice at the new skill; and if nap-fighting, short naps, and early waking arrive together, check whether a nap transition is due.',
                patienceNote:
-                    'Developmental wobbles typically settle within ~2–6 weeks; still give any schedule change at least 1–2 weeks before judging it.',
+                    'No study has timed how long these stretches last, so there is no clock to watch; still give any schedule change at least 1–2 weeks before judging it.',
                tier: 3,
-               sourceIds: ['littleones-night-waking', 'babysleepscience-wakings'],
+               sourceIds: ['scher-2015', 'scher-cohen-2005', 'littleones-night-waking', 'babysleepscience-wakings'],
           },
      ],
 }
