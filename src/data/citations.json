@@ -1257,7 +1257,7 @@
    "venue": "Child Care, Health and Development 17(5):295–302",
    "url": "https://doi.org/10.1111/j.1365-2214.1991.tb00699.x",
    "altUrl": "https://pubmed.ncbi.nlm.nih.gov/1934318/",
-   "summary": "Longitudinal, n=118, at 3, 6, 9 and 12 months. Regular night waking was 46% at 3 months, 39% at 6, 58% at 9 and 55% at 12 — it fell from 3 to 6 months and rose at 9. Evidence against a population-level 4-month rise in waking."
+   "summary": "Longitudinal, n=118, at 3, 6, 9 and 12 months. Regular night waking was 46% at 3 months, 39% at 6, 58% at 9 and 55% at 12 — it fell from 3 to 6 months and rose at 9. Measured 3 months apart, so it does not show a 4-month rise but cannot rule out a brief one."
   },
   {
    "id": "goodlin-jones-2001",
@@ -1332,22 +1332,7 @@
    "venue": "Developmental Psychobiology 38(4):274–285",
    "url": "https://doi.org/10.1002/dev.1020",
    "altUrl": "https://pubmed.ncbi.nlm.nih.gov/11319732/",
-   "summary": "Strange Situation attachment test in 94 12-month-olds, actigraphy in 37. Night waking was common, and secure and insecure infants had similar objectively measured waking. Evidence against the idea that separation anxiety or attachment drives the '8–10 month regression'."
-  },
-  {
-   "id": "brooker-2013",
-   "tier": 1,
-   "type": "peer-reviewed",
-   "org": "University of Wisconsin–Madison",
-   "authors": "Brooker RJ, Buss KA, Lemery-Chalfant K, Aksan N, Davidson RJ, Goldsmith HH",
-   "leadAuthor": "Rebecca J. Brooker",
-   "credentials": "Rebecca J. Brooker — Department of Psychology, University of Wisconsin–Madison; senior author H. Hill Goldsmith, PhD, twin and temperament researcher.",
-   "year": 2013,
-   "title": "The development of stranger fear in infancy and toddlerhood: normative development, individual differences, antecedents, and outcomes",
-   "venue": "Developmental Science 16(6):864–878",
-   "url": "https://doi.org/10.1111/desc.12058",
-   "altUrl": "https://pubmed.ncbi.nlm.nih.gov/24118713/",
-   "summary": "Twin cohort, N=1,285, 6–36 months. Stranger fear followed four distinct growth patterns rather than one shared onset age — support for 'around 8–10 months, varies by child', not a fixed date."
+   "summary": "Strange Situation attachment test in 94 12-month-olds, actigraphy in 37. Night waking was common, and securely and insecurely attached infants had similar objectively measured waking. It tests attachment classification, not whether separation distress causes waking."
   },
   {
    "id": "weinraub-2012",
@@ -1362,7 +1347,7 @@
    "venue": "Developmental Psychology 48(6):1511–1528",
    "url": "https://doi.org/10.1037/a0027680",
    "altUrl": "https://pubmed.ncbi.nlm.nih.gov/22448981/",
-   "summary": "NICHD cohort, n≈1,200, mother reports at 6, 15, 24 and 36 months. 66% woke about one night a week throughout; 34% woke nightly at 6 months and declined to about weekly by 24 months. Waking fell steadily with no bump at 12 or 18 months, and attachment was unrelated to waking."
+   "summary": "NICHD cohort, n≈1,200, mother reports at 6, 15, 24 and 36 months. 66% woke about one night a week at every age measured; 34% woke nightly at 6 months and declined to about weekly by 24 months. Attachment classification was unrelated to waking. The months between measurements mean a brief rise near 12 or 18 months is not ruled out."
   },
   {
    "id": "pennestri-2018",
@@ -1392,7 +1377,7 @@
    "venue": "Journal of Developmental & Behavioral Pediatrics 35(5):309–316",
    "url": "https://doi.org/10.1097/DBP.0000000000000064",
    "altUrl": "https://pubmed.ncbi.nlm.nih.gov/24906032/",
-   "summary": "MoBa birth cohort, n=55,831, 6 to 18 months. Night waking fell overall across the period and problems tended to persist in the same children. No population-level rise around 12 or 18 months."
+   "summary": "MoBa birth cohort, n=55,831, 6 to 18 months. Night waking fell overall between 6 and 18 months, and problems tended to persist in the same children. Reports the overall trend only; it does not rule out a brief rise near either age."
   },
   {
    "id": "macknin-2000",
@@ -1437,7 +1422,7 @@
    "venue": "Sleep 34(8):987–995",
    "url": "https://doi.org/10.5665/SLEEP.1148",
    "altUrl": "https://pubmed.ncbi.nlm.nih.gov/21804661/",
-   "summary": "Twin cohort, n=1,029; sleep at 6, 18 and 30 months, language at 18, 30 and 60 months. Less consolidated sleep predicted later language delay — the opposite direction to the popular 'language burst causes the 18-month regression'."
+   "summary": "Twin cohort, n=1,029; sleep at 6, 18 and 30 months, language at 18, 30 and 60 months. Less consolidated sleep was associated with later language delay. It did not test whether learning new words disrupts sleep."
   }
  ],
  "recommendations": [

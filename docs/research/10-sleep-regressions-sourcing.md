@@ -34,10 +34,10 @@ The older research docs (`00`, `01`) use a different split (T2 = cohort studies,
 ## Headline findings
 
 1. **"Sleep regression" is not a clinical term, and no study has tested it.** PubMed returns zero title or abstract hits for the phrase. The AASM insomnia classification (ICSD-3-TR) never uses it. The only peer-reviewed mention found (Lenehan 2023) reports it as a label that parents and "some experts" use, and backs it with a Sleep Foundation web page.
-2. **The 4-month brain change is real. A 4-month *rise in waking* is not documented.** The EEG and circadian maturation at 2–6 months is solid T1. However, no cohort shows night waking going *up* across babies at 3–5 months. Scher 1991 found regular waking *fell* from 3 to 6 months, then rose at 9 months. Gilchrist 2025 found no sustained rise at 3–5 months. The 4-month page must separate what the brain does from what the sleep diary shows.
+2. **The 4-month brain change is real. A 4-month *rise in waking* is not documented.** The EEG and circadian maturation at 2–6 months is solid T1. However, no cohort shows night waking going *up* across babies at 3–5 months. Scher 1991 found regular waking *fell* from 3 to 6 months, then rose at 9 months; it measured every 3 months, so a brief rise in between cannot be ruled out. Gilchrist 2025 found no sustained rise at 3–5 months. The 4-month page must separate what the brain does from what the sleep diary shows.
 3. **The best-supported "regression" is the motor one, not the calendar one.** Crawling, pulling to stand and walking each line up with a short stretch of worse sleep in small actigraphy studies. The link is to the *milestone*, whenever it happens, not to an age.
-4. **Separation anxiety causing night waking is folk wisdom that the data leans against.** Separation distress does peak around 9–13 months. However, the baby's attachment status did not predict night waking (Scher 2001, Weinraub 2012), and better object permanence came with *fewer* sleep problems (Scher 2000). The only positive links involve the *mother's* separation anxiety.
-5. **No study supports a 12-month or an 18-month regression.** Large cohorts (Weinraub 2012, n≈1,200; Hysing 2014, n=55,831) show waking falling steadily from 6 to 24 months, with no bump at either age.
+4. **No study shows that separation anxiety causes night waking.** Separation distress does peak around 9–13 months (Kearsley 1975). No study found here tested whether the baby's separation distress causes waking. The nearby findings are narrower: the baby's *attachment classification* did not predict night waking (Scher 2001, Weinraub 2012), and better object permanence went with *fewer* sleep problems (Scher 2000). The only positive links involve the *mother's* separation anxiety.
+5. **No study supports a 12-month or an 18-month regression.** Large cohorts show waking declining overall: Weinraub 2012 (n≈1,200, measured at 6, 15, 24 and 36 months) and Hysing 2014 (n=55,831, 6 to 18 months). Their measurements are months apart, so they cannot rule out a brief rise near either age. They do show that no such rise is visible at the ages measured.
 6. **"Lasts 2–6 weeks" has no source at any age.** It appears only in commercial blogs. The motor studies show timing that differs from baby to baby.
 7. **The site's angle, "is this a regression, or is the wake window wrong?", is only partly supported.** One study of 1.5-year-olds (Nakagawa 2016) links longer and later naps to shorter, later night sleep. Nothing under 12 months links nap timing to night *waking*, and wake windows themselves are T2 in the app. The pages can use the planner as a thing to check, never as a diagnosis.
 
@@ -49,7 +49,7 @@ These affect shipped content, not the new pages. They are recorded here so the n
 |---|---|---|
 | `RegressionExplainer.vue` (4-month card, T1 badge); `02` §6; B06 spec | Cycles are "~45–60 min" | Measured: about 62 min at 3 months (95% CI 56–67), lengthening about 10 min by 12 months (Hammad 2026). "About an hour" or "about 50–60 min" is defensible. The "45" figure has no source. |
 | Same card; `02` §6–7; B06 spec | Change "smooths out over about 2–6 weeks" | NO SOURCE. It is shown under a T1 badge today. |
-| `RegressionExplainer.vue` (8–10 month card, T1 badge) | Separation anxiety, from object permanence, drives the night wakings | Onset age: supported. Causal link to waking: not supported, and contradicted in part (see 8-month table). The crawling part of the card is fine. |
+| `RegressionExplainer.vue` (8–10 month card, T1 badge) | Separation anxiety, from object permanence, drives the night wakings | Onset age: supported. Causal link to waking: no study found (see E4 in the 8-month table). The crawling part of the card is fine. |
 | `02` §7 | "Only the 4-month change has a clear, universal biological driver" | The EEG driver is universal. A behavioural regression at 4 months is not documented at population level (Scher 1991, Gilchrist 2025). |
 | `02` §6 (unsourced in text) | K-complexes as part of the 4-month change | AASM: K-complexes first appear about 5 months post-term and are usually present by 6 months (Grigg-Damberger 2007), not "4–6 months". |
 
@@ -70,7 +70,7 @@ These affect shipped content, not the new pages. They are recorded here so the n
 | H9 | Too much or badly timed day sleep can look like a regression. | PARTIAL | `nakagawa-2016` (T1), `nakagawa-2021` (T1), `lassonde-2016` (T1) | Toddler data only (1.5 y; Lassonde 2.5–3 y). Longer and later naps go with shorter and later night sleep. No study links nap timing to night *waking*, or covers under-12-month-olds. |
 | H10 | Wake windows are a practitioner heuristic. | EVIDENCE (that it is a heuristic) | `canapari-critique` (T2), `gilchrist-2025-frontiers` (T1), app tier scheme | Keep the app's T2 badge on any wake-window number. |
 | H11 | "Regressions" last 2–6 weeks. | NO SOURCE | Commercial blogs only | Do not state a duration. |
-| H12 | Every baby has regressions at set ages. | CONTRADICTED | `weinraub-2012`, `hysing-2014`, `scher-1991` | Say the opposite: many babies show no age-locked setback. |
+| H12 | Every baby has regressions at set ages. | CONTRADICTED | `weinraub-2012`, `hysing-2014`, `scher-1991` | In Weinraub, 66% of babies woke about one night a week at every age measured. Say that many babies show no setback at the ages studied. |
 
 ---
 
@@ -86,7 +86,7 @@ These affect shipped content, not the new pages. They are recorded here so the n
 | F6 | Infant sleep cycles are about an hour long, shorter than an adult's. | EVIDENCE | `hammad-2026` (T1) | About 62 min at 3 months, lengthening by about 10 min by 12 months (actigraphy, n=152). Not "45 min". |
 | F7 | Babies wake briefly between cycles at every age; settling back alone is the skill that develops. | EVIDENCE | `goodlin-jones-2001`, `burnham-2002`, `henderson-2020` (T1) | Half of 12-month-olds still needed a parent to resettle (Goodlin-Jones). Keep the reassurance. |
 | F8 | These brain changes only go one way; they do not reverse. | EVIDENCE | `grigg-damberger-2007`, `louis-1997`, `lenehan-2023` (T1) | The *brain* part only. This is the honest core of the "progression, not regression" framing. |
-| F9 | Across babies, night waking rises around 4 months. | NO SOURCE (leans CONTRADICTED) | `scher-1991`, `gilchrist-2025-frontiers`, `henderson-2020`, `mindell-2016-app` (T1) | Scher: regular waking was 46% at 3 months and 39% at 6 months. Gilchrist: actigraphy waking peaked about 12 weeks, then fell. The page must say the rise is not shown in population studies. |
+| F9 | Across babies, night waking rises around 4 months. | NO SOURCE | `scher-1991`, `gilchrist-2025-frontiers`, `henderson-2020`, `mindell-2016-app` (T1) | Scher: regular waking was 46% at 3 months and 39% at 6 months (measured 3 months apart). Gilchrist: actigraphy waking peaked about 12 weeks, then fell. The page must say population studies have not shown the rise. It must not say they ruled it out. |
 | F10 | Some individual babies' sleep changes noticeably around 3–5 months. | CONVENTION | Newcastle NHS trust page (T3), `sleepfoundation-4mo-regression` (T2) | Frame it as "many parents notice", not as a measured event. Pair it with F9. |
 | F11 | Before 6 months, waking patterns vary widely from baby to baby. | EVIDENCE | `bruni-2014`, `galland-2012` (T1) | Bruni: variable before 6 months, stable from 6 to 12 months. |
 | F12 | The change lasts 2–6 weeks. | NO SOURCE | Commercial blogs only | Do not state a duration. |
@@ -102,8 +102,8 @@ These affect shipped content, not the new pages. They are recorded here so the n
 |---|---|---|---|---|
 | E1 | Starting to crawl is linked to more night waking for a while. | EVIDENCE | `scher-cohen-2005` (n=107, cross-sectional), `scher-2015` (n=28, longitudinal), `berger-moore-2021`, `waugh-berger-2026` (T1) | Small samples. Say "linked to", not "causes". Waugh & Berger: the senior author advises Nanit; disclose if cited. |
 | E2 | Pulling to stand is linked to disrupted sleep. | PARTIAL | `atun-einy-2016` (T1, n=20) | Only in babies who pulled to stand early (by 8 months). |
-| E3 | Crying at separation rises around 9–13 months. | EVIDENCE | `kearsley-1975` (T1), `brooker-2013` (T1), `aap-separation-anxiety-ease` (T1 guidance) | Peaks at 9½ and 13½ months (Kearsley). Onset differs by child; Brooker found four patterns, not one age. |
-| E4 | Separation anxiety causes the night waking. | CONTRADICTED in part | `scher-2001` (attachment unrelated to measured waking), `weinraub-2012` (attachment unrelated), `scher-2000-object` (better object permanence, fewer problems) (T1). The AAP sleep page asserts the link with no data (`aap-separation-anxiety-sleep`). | Do not state the link as fact. At most: "often blamed; studies have not found the baby's attachment predicts waking". |
+| E3 | Crying at separation rises around 9–13 months. | EVIDENCE | `kearsley-1975` (T1), `aap-separation-anxiety-ease` (T1 guidance) | Peaks at 9½ and 13½ months (Kearsley, n=52). AAP: usually about 9 months, sometimes 4–5. Say "around", not a fixed age. |
+| E4 | Separation anxiety causes the night waking. | NO SOURCE | No study found that tests the baby's separation distress against night waking. The AAP sleep page asserts the link with no data (`aap-separation-anxiety-sleep`). Narrower findings only: attachment *classification* did not predict waking (`scher-2001`, `weinraub-2012`), and better object permanence went with fewer sleep problems (`scher-2000-object`) (T1). | Do not state the link as fact. At most: "often blamed, but not tested; studies found the baby's attachment type did not predict waking". |
 | E5 | A parent's own separation anxiety is linked to more infant waking. | PARTIAL | `scher-blumberg-1999`, `scher-2008` (T1) | Correlational. Handle with care; never imply the parent caused it. Probably leave it off the page. |
 | E6 | Waking at 6–12 months is common. | EVIDENCE | `pennestri-2018`, `weinraub-2012`, `scher-1991`, `chandyo-2024` (T1) | Scher 1991: regular waking was 58% at 9 months. This is the one age where a rise *is* documented. |
 | E7 | Breastfeeding, a more difficult temperament and maternal depression predict ongoing waking at this age. | EVIDENCE | `weinraub-2012` (T1) | Correlates, not causes. Breastfeeding must not read as a problem to fix. Leave it off unless handled with care. |
@@ -111,7 +111,7 @@ These affect shipped content, not the new pages. They are recorded here so the n
 | E9 | The "8–10 month regression" is a studied event. | NO SOURCE | Europe PMC full text: 0 hits for "8-month sleep regression" | Present it as a popular label. |
 | E10 | It lasts 2–6 weeks. | NO SOURCE | Blogs only | Do not state a duration. |
 
-**Page shape this supports:** "8 months is when the motor evidence is strongest. If your baby just started crawling or pulling up, a rough patch is common and usually tied to the skill. The separation-anxiety story is popular but not well supported."
+**Page shape this supports:** "8 months is when the motor evidence is strongest. If your baby just started crawling or pulling up, a rough patch is common and usually tied to the skill. The separation-anxiety story is popular but has not been tested."
 
 ---
 
@@ -121,7 +121,7 @@ These affect shipped content, not the new pages. They are recorded here so the n
 |---|---|---|---|---|
 | T1 | Learning to walk is linked to a stretch of worse sleep. | EVIDENCE (small) | `demasi-2023` (T1, n=78), `waugh-berger-2026` (T1) | Tie it to walking onset, whenever it happens (often 9–15 months), not to the birthday. |
 | T2 | The 2→1 nap transition often starts around 12–18 months. | PARTIAL | `weissbluth-1995`, `staton-2020` (T1) | Weissbluth: consolidation to one nap happens by 15–24 months. Say "12–18 months, often later". "Starts at 12 months" is too early as a rule. |
-| T3 | There is a population-level sleep setback at about 12 months. | NO SOURCE (leans CONTRADICTED) | `weinraub-2012`, `hysing-2014` (T1) | Waking declines steadily from 6 to 18 months with no bump. Say so. |
+| T3 | There is a population-level sleep setback at about 12 months. | NO SOURCE | `weinraub-2012` (T1, measured at 6 and 15 months), `hysing-2014` (T1, 6 to 18 months) | Waking declines overall between the ages measured. Those ages are months apart, so a brief rise near 12 months is not ruled out. Say "studies of many babies have not found one", not "there isn't one". |
 | T4 | Many 12-month-olds still wake at night, and that is normal. | EVIDENCE | `pennestri-2018`, `lenehan-2023`, `scher-2001`, `goodlin-jones-2001` (T1) | Lenehan: 72% slept 6 h or more straight at 12 months, and 57% slept 8 h or more. |
 | T5 | Teething at this age causes sleep problems. | PARTIAL | `macknin-2000` (T1) | Covers 4–12 months. The effect is small and brief. |
 | T6 | It lasts 2–6 weeks. | NO SOURCE | Blogs only | Do not state a duration. |
@@ -134,12 +134,12 @@ These affect shipped content, not the new pages. They are recorded here so the n
 
 | # | Claim | Label | Sources (tier) | Wording constraint |
 |---|---|---|---|---|
-| X1 | There is a population-level sleep setback at about 18 months. | NO SOURCE (leans CONTRADICTED) | `hysing-2014` (T1, 6→18 months), `weinraub-2012` (T1, 15→24 months) | Waking falls through this age. Say so. |
+| X1 | There is a population-level sleep setback at about 18 months. | NO SOURCE | `hysing-2014` (T1, 6→18 months), `weinraub-2012` (T1, measured at 15 and 24 months) | Waking declines overall across this age. The measurements are months apart, so a brief rise is not ruled out. Same wording rule as T3. |
 | X2 | Most children are on one nap by about 15–24 months, and the switch can unsettle sleep. | PARTIAL | `weissbluth-1995`, `staton-2020` (T1) | The *timing* is EVIDENCE. The idea that the switch unsettles sleep is CONVENTION. |
 | X3 | First molars come in around 13–19 months. | EVIDENCE | `ada-tooth-chart` (T1) | Upper 13–19 months, lower 14–18 months; canines 16–23 months. |
 | X4 | Molars cause bad sleep. | NO SOURCE | `macknin-2000` covers under-12-month-olds only | Say teething effects are small and brief in the one prospective study, which did not cover molars. |
 | X5 | Separation anxiety usually fades by about age 2. | EVIDENCE (guidance) | `aap-separation-anxiety-sleep` (T1 guidance) | AAP guidance without data. Pair it with E4's caveat. |
-| X6 | A language burst at about 18 months disrupts sleep. | PARTIAL / CONTRADICTED as usually framed | `waugh-berger-2026` (T1, single study, disruption around new-word milestones) vs `dionne-2011` (T1, n=1,029: less consolidated sleep predicts *later* language delay, the opposite direction) | Do not say "the language explosion causes the regression". One new study links new words with disrupted sleep. |
+| X6 | A language burst at about 18 months disrupts sleep. | PARTIAL | `waugh-berger-2026` (T1, single study, disruption around new-word milestones) | Do not say "the language explosion causes the regression". One new study links new words with disrupted sleep. `dionne-2011` does not bear on this: it tested whether earlier sleep predicts later language, not whether learning words disrupts sleep. |
 | X7 | Walking mastery is linked to sleep changes. | PARTIAL | `demasi-2023`, `waugh-berger-2026` (T1) | Most children walk well before 18 months, so this is weak for this age. |
 | X8 | Night waking is still common at 18 months. | EVIDENCE | `jenkins-1984`, `hysing-2014`, `sadeh-2009` (T1) | Jenkins: about half of night-wakers persist from 12 to 18 months and from 18 to 24 months. The data is old; pair it with Hysing. |
 | X9 | Bedtime resistance rises at 18–24 months. | NO SOURCE (age-specific) | No normative prevalence found for 18–24 months | AAP "Toddler bedtime trouble" guidance may be cited as advice, not as a rate. |
@@ -180,7 +180,7 @@ These affect shipped content, not the new pages. They are recorded here so the n
 | `scher-blumberg-1999` | Scher A, Blumberg O. Night waking among 1-year olds: a study of maternal separation anxiety. *Child Care Health Dev* 1999;25(5):323–34. [doi:10.1046/j.1365-2214.1999.00099.x](https://doi.org/10.1046/j.1365-2214.1999.00099.x) | n=81, 6 and 12 months | doc | ✔ abstract |
 | `scher-2008` | Scher A. Maternal separation anxiety as a regulator of infants' sleep. *J Child Psychol Psychiatry* 2008;49(6):618–25. [doi:10.1111/j.1469-7610.2007.01872.x](https://doi.org/10.1111/j.1469-7610.2007.01872.x) | n=52, 10 months | doc | ✔ abstract |
 | `kearsley-1975` | Kearsley RB, Zelazo PR, Kagan J, Hartmann R. Separation protest in day-care and home-reared infants. *Pediatrics* 1975;55(2):171–5. [PMID 1118207](https://pubmed.ncbi.nlm.nih.gov/1118207/) | n=52, 3½–20 months | doc | ✔ abstract |
-| `brooker-2013` | Brooker RJ, et al. The development of stranger fear in infancy and toddlerhood… *Dev Sci* 2013;16(6):864–78. [doi:10.1111/desc.12058](https://doi.org/10.1111/desc.12058) | Twin cohort, N=1,285, 6–36 months | JSON | ✔ abstract |
+| `brooker-2013` | Brooker RJ, et al. The development of stranger fear in infancy and toddlerhood… *Dev Sci* 2013;16(6):864–78. [doi:10.1111/desc.12058](https://doi.org/10.1111/desc.12058) | Twin cohort, N=1,285, 6–36 months | doc (measures stranger fear, not separation distress, so it is not used for E3) | ✔ abstract |
 | `weinraub-2012` | Weinraub M, et al. Patterns of developmental change in infants' nighttime sleep awakenings from 6 through 36 months of age. *Dev Psychol* 2012;48(6):1511–28. [doi:10.1037/a0027680](https://doi.org/10.1037/a0027680) | NICHD SECCYD, n≈1,200 | JSON | ✔ abstract |
 | `pennestri-2018` | Pennestri MH, et al. Uninterrupted infant sleep, development, and maternal mood. *Pediatrics* 2018;142(6):e20174330. [doi:10.1542/peds.2017-4330](https://doi.org/10.1542/peds.2017-4330) | Cohort, n=388 | JSON | ✔ abstract |
 | `hysing-2014` | Hysing M, et al. Trajectories and predictors of nocturnal awakenings and sleep duration in infants. *J Dev Behav Pediatr* 2014;35(5):309–16. [doi:10.1097/DBP.0000000000000064](https://doi.org/10.1097/DBP.0000000000000064) | MoBa cohort, n=55,831, 6–18 months | JSON | ✔ abstract |
@@ -193,7 +193,7 @@ These affect shipped content, not the new pages. They are recorded here so the n
 | `nakagawa-2016` | Nakagawa M, et al. Daytime nap controls toddlers' nighttime sleep. *Sci Rep* 2016;6:27246. [doi:10.1038/srep27246](https://doi.org/10.1038/srep27246) | Actigraphy, n=50, about 1.5 years | JSON | ✔ |
 | `nakagawa-2021` | Nakagawa M, et al. Daytime nap and nighttime breastfeeding are associated with toddlers' nighttime sleep. *Sci Rep* 2021;11:3028. [doi:10.1038/s41598-021-81970-6](https://doi.org/10.1038/s41598-021-81970-6) | Actigraphy, n=106, 1.5 years | doc | ✔ |
 | `lassonde-2016` | Lassonde JM, et al. Sleep physiology in toddlers: effects of missing a nap on subsequent night sleep. *Neurobiol Sleep Circadian Rhythms* 2016;1(1):19–26. [doi:10.1016/j.nbscr.2016.08.001](https://doi.org/10.1016/j.nbscr.2016.08.001) | PSG, n=25, 30–36 months | doc | ✔ abstract |
-| `dionne-2011` | Dionne G, et al. Associations between sleep-wake consolidation and language development in early childhood: a longitudinal twin study. *Sleep* 2011;34(8):987–95. [doi:10.5665/SLEEP.1148](https://doi.org/10.5665/SLEEP.1148) | Twin cohort, n=1,029 | JSON | ✔ abstract |
+| `dionne-2011` | Dionne G, et al. Associations between sleep-wake consolidation and language development in early childhood: a longitudinal twin study. *Sleep* 2011;34(8):987–95. [doi:10.5665/SLEEP.1148](https://doi.org/10.5665/SLEEP.1148) | Twin cohort, n=1,029 | JSON (sleep → later language only; not evidence about milestone-linked sleep changes) | ✔ abstract |
 
 Already held in `citations.json` and reused above: `henderson-2010`, `galland-2012` (✘ for 3–5-month figures; only the extreme age bands were confirmed), `paavonen-2020`, `mindell-2016-app` (commercially sponsored app), `gilchrist-2025-frontiers` (three of four authors work for Happiest Baby Inc.), `lenehan-2023`, `mcgraw-1999`, `rivkees-2007`, `scher-2015`, `weissbluth-1995`, `staton-2020`, `canapari-critique`.
 
@@ -215,7 +215,7 @@ Existing commercial sources (`sleepfoundation-4mo-regression` T2, `tcb-separatio
 
 ### Why not all in JSON
 
-`citations.json` entries need a lead author, credentials and an org. Sixteen sources were added where PubMed gave a verified affiliation *and* the page tables above need them. The rest stay here as doc-only IDs. The page build (step 2) should add any it actually cites, using the same PubMed check.
+`citations.json` entries need a lead author, credentials and an org. Fifteen sources were added where PubMed gave a verified affiliation *and* the page tables above need them. The rest stay here as doc-only IDs. The page build (step 2) should add any it actually cites, using the same PubMed check.
 
 ---
 
