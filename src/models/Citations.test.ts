@@ -62,12 +62,18 @@ describe('regression / progression explainer sources', () => {
     // must resolve so RegressionExplainer.vue never renders an empty citation.
     it('resolves every source id the explainer references', () => {
         const ids = [
+            'grigg-damberger-2007',
+            'hammad-2026',
+            'scher-1991',
+            'gilchrist-2025-frontiers',
             'henderson-2010',
-            'jenni-lebourgeois-2006',
             'sleepfoundation-4mo-regression',
             'scher-2015',
-            'tcb-separation-anxiety',
-            'seehagen-2015',
+            'scher-cohen-2005',
+            'brooker-2013',
+            'scher-2001',
+            'weinraub-2012',
+            'hysing-2014',
             'huckleberry-regression-myth',
             'galland-2012',
             'littleones-night-waking',

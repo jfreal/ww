@@ -26,30 +26,30 @@ const phases: Phase[] = [
           heading: 'A permanent step forward, not a blip',
           tier: 1,
           body: [
-               'Newborn sleep is simple. Around 4 months it reorganizes into mature, cyclical sleep — repeating ~45–60 minute NREM/REM cycles, each ending in a brief arousal. Your baby now has to re-learn how to link one cycle to the next on their own.',
-               'This change is one-way: it is your baby’s brain maturing on schedule, and it stays. It usually smooths out over about 2–6 weeks. Think of it as growth, not a slide backward — nothing is broken, and nothing went wrong.',
+               'Newborn sleep is simple. Around 4 months the brain’s sleep system matures into adult-style stages, and sleep settles into repeating cycles of about an hour, each ending in a brief stir. Settling back to sleep between cycles is a skill that builds over the months that follow.',
+               'The brain change is one-way: it is your baby’s brain maturing on schedule, and it stays. What happens to sleep varies from baby to baby. Studies that follow many babies do not show night waking rising at 4 months, so if sleep got rougher for yours, that is real, and if it didn’t, nothing was missed. Either way it is growth, not a slide backward — nothing is broken, and nothing went wrong.',
           ],
           changes: [
-               'Sleep splits into adult-like cycles with brief wakings between them.',
-               'More frequent light-sleep arousals, especially in the second half of the night.',
-               'The skill being built is re-linking cycles back into sleep.',
+               'Sleep reorganizes into adult-style stages and cycles of about an hour, with brief stirs between them.',
+               'Many parents notice more wakings or shorter naps for a while, though population studies do not show a 4-month rise.',
+               'The skill being built is settling back to sleep between cycles.',
           ],
-          sources: getSources(['henderson-2010', 'jenni-lebourgeois-2006', 'sleepfoundation-4mo-regression']),
+          sources: getSources(['grigg-damberger-2007', 'hammad-2026', 'scher-1991', 'gilchrist-2025-frontiers', 'henderson-2010', 'sleepfoundation-4mo-regression']),
      },
      {
           age: '~8–10 months',
           heading: 'A big-world, big-feelings window',
           tier: 1,
           body: [
-               'Around 8–10 months two things tend to arrive together: separation anxiety — your baby now understands you still exist after you leave (object permanence) — and new motor skills like crawling and pulling to stand, which the brain rehearses even at night.',
-               'Wakings often rise for a few weeks while all of this lands. It is a busy developmental phase, not a problem to fix and not something you caused.',
+               'Around 8–10 months many babies start crawling or pulling to stand. Small studies link starting to crawl with a stretch of more night waking — the change tracks the new skill, whenever it arrives, not a date on the calendar.',
+               'This is also when many babies start to protest when you leave. That is often blamed for night waking, but studies have not found that a baby’s attachment predicts how often they wake. It is a busy developmental phase, not a problem to fix and not something you caused.',
           ],
           changes: [
-               'Separation anxiety can make settling and re-settling harder for a while.',
-               'A new motor skill (crawling, pulling up) often tracks a temporary bump in night waking.',
-               'It typically eases over about 2–6 weeks as the skills consolidate.',
+               'Starting to crawl is linked to a temporary rise in night waking.',
+               'Protest at separation often begins in this window, though the timing differs from baby to baby.',
+               'Separation anxiety gets the blame for night waking, but the research does not back that link.',
           ],
-          sources: getSources(['scher-2015', 'tcb-separation-anxiety', 'seehagen-2015']),
+          sources: getSources(['scher-2015', 'scher-cohen-2005', 'brooker-2013', 'scher-2001', 'weinraub-2012']),
      },
      {
           age: '12 / 18 / 24 months',
@@ -60,11 +60,11 @@ const phases: Phase[] = [
                'That is genuinely reassuring: no scheduled setback is coming, and if your toddler is sleeping well, nothing is being skipped. If it is rough right now, that is real too — look at what is actually going on this week rather than blaming the age.',
           ],
           changes: [
-               'No strong evidence these are universal developmental events.',
+               'Large studies find night waking declines steadily through toddlerhood, with no bump at 12 or 18 months.',
                'Bumps usually cluster around nap transitions, teething, illness, or skill bursts.',
                'Many experts prefer "progression" over "regression" for this whole first stretch.',
           ],
-          sources: getSources(['huckleberry-regression-myth', 'scher-2015', 'galland-2012']),
+          sources: getSources(['huckleberry-regression-myth', 'weinraub-2012', 'hysing-2014', 'scher-2015', 'galland-2012']),
      },
 ]
 
