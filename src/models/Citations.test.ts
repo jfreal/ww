@@ -71,7 +71,7 @@ describe('regression / progression explainer sources', () => {
             'sleepfoundation-4mo-regression',
             'scher-2015',
             'scher-cohen-2005',
-            'brooker-2013',
+            'atun-einy-2016',
             'scher-2001',
             'weinraub-2012',
             'hysing-2014',
