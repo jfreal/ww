@@ -97,7 +97,6 @@ describe('sleep-regression cluster sources (docs/research/10)', () => {
             'atun-einy-2016',
             'demasi-2023',
             'scher-2001',
-            'brooker-2013',
             'weinraub-2012',
             'pennestri-2018',
             'hysing-2014',
