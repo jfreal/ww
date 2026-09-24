@@ -56,15 +56,15 @@ const phases: Phase[] = [
           heading: 'Commonly cited, but weakly supported',
           tier: 3,
           body: [
-               'You will see "12-month" and "18-month regressions" everywhere, but there is little evidence they are universal, built-in events. When sleep gets bumpy at these ages it usually tracks something specific — a nap transition, teething, an illness, or a language or motor burst — rather than a fixed calendar regression.',
+               'You will see "12-month" and "18-month regressions" everywhere, but there is little evidence they are universal, built-in events. When sleep gets bumpy at these ages, look for something specific happening that week rather than the calendar. Learning to walk is linked to a stretch of restless sleep in a small study, illness is linked to more waking, and teething effects in the one careful study were small and brief.',
                'That is genuinely reassuring: no scheduled setback is coming, and if your toddler is sleeping well, nothing is being skipped. If it is rough right now, that is real too — look at what is actually going on this week rather than blaming the age.',
           ],
           changes: [
                'Studies of many babies find night waking falls overall through toddlerhood, and have not found a setback at 12 or 18 months.',
-               'Bumps usually cluster around nap transitions, teething, illness, or skill bursts.',
+               'Nap changes are a common suspect too, though that link comes from practice, not from studies.',
                'Many experts prefer "progression" over "regression" for this whole first stretch.',
           ],
-          sources: getSources(['huckleberry-regression-myth', 'weinraub-2012', 'hysing-2014', 'scher-2015', 'galland-2012']),
+          sources: getSources(['huckleberry-regression-myth', 'weinraub-2012', 'hysing-2014', 'demasi-2023', 'macknin-2000', 'galland-2012']),
      },
 ]
 

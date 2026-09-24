@@ -75,6 +75,8 @@ describe('regression / progression explainer sources', () => {
             'scher-2001',
             'weinraub-2012',
             'hysing-2014',
+            'demasi-2023',
+            'macknin-2000',
             'huckleberry-regression-myth',
             'galland-2012',
             'littleones-night-waking',
