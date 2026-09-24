@@ -83,6 +83,38 @@ describe('regression / progression explainer sources', () => {
     });
 });
 
+describe('sleep-regression cluster sources (docs/research/10)', () => {
+    // The /sleep-regressions pages (#32) may only cite claims sourced in doc 10;
+    // the Tier-1 studies it added here must resolve and stay Tier 1.
+    it('resolves every Tier-1 source the sourcing doc added', () => {
+        const ids = [
+            'grigg-damberger-2007',
+            'hammad-2026',
+            'kennaway-1992',
+            'scher-1991',
+            'goodlin-jones-2001',
+            'scher-cohen-2005',
+            'atun-einy-2016',
+            'demasi-2023',
+            'scher-2001',
+            'brooker-2013',
+            'weinraub-2012',
+            'pennestri-2018',
+            'hysing-2014',
+            'macknin-2000',
+            'nakagawa-2016',
+            'dionne-2011',
+        ];
+        expect(getSources(ids).length).toBe(ids.length);
+        for (const id of ids) expect(getSource(id)?.tier, id).toBe(1);
+    });
+
+    it('has no duplicate source ids', () => {
+        const ids = sources.map((s) => s.id);
+        expect(new Set(ids).size).toBe(ids.length);
+    });
+});
+
 // @doc:sleep-training-overview
 describe('sleep-training overview sources', () => {
     // B07 cites Tier-1 efficacy/safety evidence plus the weak (Tier-3) Middlemiss
