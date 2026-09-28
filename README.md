@@ -123,6 +123,14 @@ npm run dev        # start the dev server
 | `npm run preview` | Preview the production build locally |
 | `npm test` | Run the Vitest suite |
 
+### Claude Code
+
+`.claude/settings.json` registers and enables the shared Nightforge plugin, but that does not download it. Collaborators should install it once for this repo:
+
+```bash
+claude plugin install nightforge@nightforge --scope project
+```
+
 ## Notes
 
 This is a personal project built to help plan a real baby's naps — and to keep a clean,
