@@ -1,0 +1,21 @@
+{
+  "registry": ".claude/sync-docs/registry.json",
+  "sources": {
+    "roots": ["src"],
+    "extensions": [".ts", ".vue", ".js", ".css"],
+    "exclude": ["node_modules/**", "dist/**"],
+    "tagForm": "inline",
+    "entryFormat": "path:line"
+  },
+  "docs": {
+    "root": "docs/features",
+    "marker": "frontmatter"
+  },
+  "mirror": ["title", "category", "priority", "status"],
+  "checks": {
+    "index": { "file": "docs/features/FEATURE-INDEX.md", "match": "id-or-title", "groupBy": "category" },
+    "status": { "field": "status", "planned": "Proposed", "built": "Built" },
+    "tests": { "tag": "@test", "roots": ["e2e"], "spec": "e2e/{key}.spec.ts", "requiredFor": "Built" }
+  },
+  "rules": ".claude/sync-docs/rules.md"
+}
