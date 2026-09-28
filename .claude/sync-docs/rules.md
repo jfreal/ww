@@ -62,5 +62,5 @@ local `vite preview`.
 ## Rebuilding the registry
 
 If the registry is lost, rebuild it from disk: read `docKey` and the mirrored fields from every
-`docs/features/[A-H]*.md`, then fill `sources` from the `@doc:` tags under `src/` and `tests` from
+`docs/features/[A-H][0-9][0-9]-*.md`, then fill `sources` from the `@doc:` tags under `src/` and `tests` from
 the `@test:` tags under `e2e/`. The first registry was generated this way.
