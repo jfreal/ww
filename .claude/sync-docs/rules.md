@@ -1,11 +1,7 @@
 # sync-docs rules for Wake Windows
 
-Repo-specific guidance for the shared `sync-docs` skill. The config in `config.json` says where
-things are; this file says what to compare and how to write.
-
-The app is a Vue 3 + TypeScript + Vite single-page app. The doc pages are the internal feature
-specs under `docs/features/`, one file per feature, each with YAML frontmatter (`title`, `id`,
-`docKey`, `category`, `priority`, `status`).
+The doc pages are the internal feature specs under `docs/features/`, one file per feature, each
+with YAML frontmatter (`title`, `id`, `docKey`, `category`, `priority`, `status`).
 
 ## Tags in Vue files
 
@@ -23,8 +19,7 @@ In a `.vue` file the tag is a JS comment inside `<script>`, or an HTML comment i
 ## How to write a fix
 
 - Edit the body, not the frontmatter, except to add a missing `docKey` or change `status`.
-- Keep the page's 13-section template and its user-facing tone. These are specs a person reads, not
-  code docs.
+- Keep the page's 13-section template and its user-facing tone.
 - A missing `docKey` comes from the file name with its id prefix removed:
   `A05-bedtime-calculator.md` → `bedtime-calculator`.
 
@@ -62,5 +57,5 @@ local `vite preview`.
 ## Rebuilding the registry
 
 If the registry is lost, rebuild it from disk: read `docKey` and the mirrored fields from every
-`docs/features/[A-H][0-9][0-9]-*.md`, then fill `sources` from the `@doc:` tags under `src/` and `tests` from
-the `@test:` tags under `e2e/`. The first registry was generated this way.
+`docs/features/[A-H][0-9][0-9]-*.md`, then fill `sources` from the `@doc:` tags under `src/` and
+`tests` from the `@test:` tags under `e2e/`.
