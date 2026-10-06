@@ -28,9 +28,10 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 # Security headers. CSP allows Vue/Tailwind's inline styles; img data: covers
-# inlined icons. Widen a directive only if a third-party origin (analytics,
-# fonts, CDN) is added later, or the app will break. connect-src 'self' is safe
-# because the tool is local-first (no external API calls).
+# inlined icons. The only third-party origins are Google Analytics'
+# (public/gtag-init.js): googletagmanager.com serves gtag.js, and hits go to
+# google-analytics.com / analytics.google.com. The app itself makes no external
+# API calls. Widen a directive only if another third-party origin is added.
 [[headers]]
   for = "/*"
   [headers.values]
@@ -39,4 +40,4 @@
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), camera=(), microphone=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; manifest-src 'self'; base-uri 'self'; form-action 'self'"

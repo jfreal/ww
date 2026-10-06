@@ -138,7 +138,7 @@ describe('buildAgePages', () => {
     it('describes the page with the age’s published ranges', () => {
         const six = pages.find((p) => p.months === 6)!
         expect(six.wakeWindowRange).toEqual([120, 180])
-        expect(six.description).toContain('120–180 minutes')
+        expect(six.description).toContain('120–180 minute wake windows')
     })
 })
 

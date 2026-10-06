@@ -266,12 +266,12 @@ export function buildWakeWindowPage(
         // page's keyword already leads with the age.
         title: `${page.months === 0
             ? 'Newborn wake windows'
-            : page.keyword.replace(/^(\d+) month old/, '$1-month-old')}: how long, and what to do when they do not fit`,
+            : page.keyword.replace(/^(\d+) month old/, '$1-month-old')}: how long they stay awake`,
         heading: page.months === 0 ? 'Newborn wake windows' : `${agePage.label} wake windows`,
         label,
         description:
-            `How long a ${label} can comfortably stay awake — ${bracket.wwTime[0]}–${bracket.wwTime[1]} minutes `
-            + `from cited guidance — with a sample day and a free planner that turns the windows into clock times.`,
+            `How long a ${label} can comfortably stay awake: ${bracket.wwTime[0]}–${bracket.wwTime[1]} minutes, `
+            + `from cited guidance. With a sample day and a free planner for clock times.`,
         path: `${WAKE_WINDOW_BASE}/${page.slug}/`,
         url: `${SITE_ORIGIN}${WAKE_WINDOW_BASE}/${page.slug}/`,
         range: bracket.wwTime,

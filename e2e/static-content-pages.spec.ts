@@ -40,6 +40,34 @@ test.describe('Static content pages [@feature:static-content-pages]', () => {
       // The published range for 6-8 months, straight from the Tier-1 bracket.
       await expect(page.getByText('120–180 min')).toBeVisible();
     });
+
+    // The homepage is the SPA shell, so its crawlable text lives in index.html
+    // inside #app (replaced on mount). An SEO audit read it as 0 words while
+    // that text sat in <noscript>, which crawlers drop.
+    test('homepage shows its static content and links into both clusters', async ({ page }) => {
+      await page.goto('/');
+
+      await expect(page.getByRole('heading', { level: 1, name: /Infant Nap Schedule/ })).toBeVisible();
+      await expect(page.getByRole('link', { name: '6 month old sleep schedule' })).toBeVisible();
+      await expect(page.getByRole('link', { name: '6 month old wake windows' })).toBeVisible();
+    });
+  });
+
+  test('homepage text is in the served HTML, outside <noscript>', async ({ request }) => {
+    const html = await (await request.get('/')).text();
+    const app = html.match(/<div id="app">([\s\S]*?)<\/div>/)?.[1] ?? '';
+
+    expect(app).not.toContain('<noscript');
+    const words = app.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean);
+    expect(words.length).toBeGreaterThan(300);
+    // The build fills the link lists; a leftover marker means it did not run.
+    expect(html).not.toContain('-links-->');
+  });
+
+  test('the app replaces the static homepage content once it mounts', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('#screen')).toBeVisible();
+    await expect(page.locator('.prerender')).toHaveCount(0);
   });
 
   test('call to action opens the planner on the day the page printed', async ({ page }) => {

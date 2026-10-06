@@ -139,6 +139,18 @@ describe('renderContentPages with both clusters', () => {
         expect(eight.html).not.toContain('undefined')
     })
 
+    // Search results cut titles past ~60 characters and descriptions past
+    // ~155–160; an SEO audit flagged every templated page for running over.
+    it('keeps every title and meta description inside SERP limits', () => {
+        const unescape = (s: string) => s.replace(/&amp;/g, '&').replace(/&quot;/g, '"')
+        for (const file of emitted) {
+            const title = unescape(file.html.match(/<title>(.*?)<\/title>/)![1])
+            const description = unescape(file.html.match(/<meta name="description" content="(.*?)" \/>/)![1])
+            expect(title.length, `${file.path} title: ${title}`).toBeLessThanOrEqual(60)
+            expect(description.length, `${file.path} description: ${description}`).toBeLessThanOrEqual(155)
+        }
+    })
+
     it('still emits cluster 1 alone when no wake-window pages are passed', () => {
         const only = renderContentPages(agePages, hubBracketRows(agePages))
         expect(only).toHaveLength(agePages.length + 1)
