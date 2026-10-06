@@ -19,6 +19,18 @@
     <style>body { background: #f6f0e6; }</style>
   </noscript>
 
+  <!-- Static homepage content (see #app in <body>). Plain inline styles because
+       the app's stylesheet arrives with the JS. The reveal is delayed so a
+       visitor with JS never sees it flash before the app replaces it; text-only
+       crawlers ignore CSS and read it straight from the HTML. -->
+  <style>
+    .prerender { max-width: 48rem; margin: 0 auto; padding: 1.5rem; color: #3d352f;
+      font-family: system-ui, sans-serif; line-height: 1.6;
+      animation: prerender-reveal 0s 1.5s both; }
+    .prerender a { color: inherit; }
+    @keyframes prerender-reveal { from { visibility: hidden; } }
+  </style>
+
   <!-- Open Graph / Twitter — controls link previews when the plan or sitter
        link is shared. og:image is currently the PWA icon; swap for a dedicated
        1200x630 card when one exists. -->
@@ -83,21 +95,36 @@
 </head>
 
 <body class="bg-slate-900 h-full">
-  <div id="app"></div>
+  <!-- Static homepage content, served in the initial HTML. The app is
+       client-rendered, so without this a non-JS crawler (GPTBot, ClaudeBot,
+       PerplexityBot, SEO auditors, Bingbot's non-JS path) sees an empty shell
+       — an audit measured the homepage at 0 words. A <noscript> block is not
+       enough: most crawlers drop its contents as hidden.
 
-  <!-- Crawler/no-JS fallback. The app is client-rendered, so without this a
-       non-JS crawler (GPTBot, ClaudeBot, PerplexityBot, Bingbot's non-JS path)
-       sees an empty shell. This static block gives them the tool's purpose,
-       core guidance, and authoritative citations to index. Keep in sync with
-       the app's headline content; full SSG/prerender would supersede it. -->
-  <noscript>
-    <main style="max-width:48rem;margin:0 auto;padding:1.5rem;color:#3d352f;font-family:system-ui,sans-serif;line-height:1.6">
-      <h1>Wake Windows — Infant Nap Schedule Planner</h1>
+       Vue's mount() clears #app before rendering, so the app replaces this as
+       soon as main.ts runs. The .prerender reveal delay (in <head>) keeps it
+       from flashing on screen for the usual JS visitor; with JS off or slow it
+       shows after a moment.
+
+       The two link lists are generated at build time from the same data as
+       the content pages (vite.config.ts), so they cannot fall behind them.
+       Keep the prose in step with the app's headline content. -->
+  <div id="app">
+    <main class="prerender">
+      <h1>Wake Windows — Infant Nap Schedule &amp; Wake Windows Planner</h1>
       <p>Wake Windows is a free, evidence-checked infant nap-schedule and wake-window
         planner. Enter your baby's age, wake time, and wake windows and it builds a
         same-day nap plan with loose guidance windows — anywhere in a window counts,
         these are ranges, not deadlines. Under about 6 months (corrected age) an
         infant's circadian clock is still maturing, so sleepy cues beat clock times.</p>
+
+      <h2>What is a wake window?</h2>
+      <p>A wake window is the stretch of time a baby is awake between one sleep and
+        the next. It grows with age: a newborn may manage well under two hours, while a
+        toddler can stay up for several. Wake windows are a practice-based estimate,
+        not a validated rule, so the planner treats them as a starting point and lets
+        your baby's cues have the final say. See
+        <a href="/wake-windows/">wake windows by age</a> for the published ranges.</p>
 
       <h2>What it does</h2>
       <ul>
@@ -109,33 +136,18 @@
       </ul>
 
       <h2>Sample sleep schedules by age</h2>
+      <p>A sample day for each age, with clock times, nap counts, and total sleep.</p>
       <ul>
         <li><a href="/sleep-schedule/">All ages — naps, bedtime and total sleep, newborn to 2 years</a></li>
-        <li><a href="/sleep-schedule/newborn/">Newborn sleep schedule</a></li>
-        <li><a href="/sleep-schedule/1-month-old/">1 month old sleep schedule</a></li>
-        <li><a href="/sleep-schedule/2-month-old/">2 month old sleep schedule</a></li>
-        <li><a href="/sleep-schedule/3-month-old/">3 month old sleep schedule</a></li>
-        <li><a href="/sleep-schedule/4-month-old/">4 month old sleep schedule</a></li>
-        <li><a href="/sleep-schedule/5-month-old/">5 month old sleep schedule</a></li>
-        <li><a href="/sleep-schedule/6-month-old/">6 month old sleep schedule</a></li>
-        <li><a href="/sleep-schedule/7-month-old/">7 month old sleep schedule</a></li>
-        <li><a href="/sleep-schedule/8-month-old/">8 month old sleep schedule</a></li>
-        <li><a href="/sleep-schedule/9-month-old/">9 month old sleep schedule</a></li>
-        <li><a href="/sleep-schedule/10-month-old/">10 month old sleep schedule</a></li>
-        <li><a href="/sleep-schedule/11-month-old/">11 month old sleep schedule</a></li>
-        <li><a href="/sleep-schedule/12-month-old/">12 month old sleep schedule</a></li>
-        <li><a href="/sleep-schedule/18-month-old/">18 month old sleep schedule</a></li>
+<!--sleep-schedule-links-->
       </ul>
 
       <h2>Wake windows by age</h2>
+      <p>How long babies stay awake between naps, from newborn to two years.</p>
       <ul>
         <li><a href="/wake-windows/">Wake windows by age — how long babies stay awake between naps</a></li>
         <li><a href="/wake-windows/chart/">Wake window chart, newborn to 2 years</a></li>
-        <li><a href="/wake-windows/newborn/">Newborn wake windows</a></li>
-        <li><a href="/wake-windows/4-month-old/">4 month old wake windows</a></li>
-        <li><a href="/wake-windows/6-month-old/">6 month old wake windows</a></li>
-        <li><a href="/wake-windows/9-month-old/">9 month old wake windows</a></li>
-        <li><a href="/wake-windows/12-month-old/">12 month old wake windows</a></li>
+<!--wake-window-links-->
       </ul>
 
       <h2>Why I built this</h2>
@@ -167,10 +179,10 @@
       </ul>
 
       <p><small>Informational only, not medical advice. Infant sleep needs vary widely;
-        families should consult their pediatrician. This tool requires JavaScript for the
-        interactive planner.</small></p>
+        families should consult their pediatrician. The interactive planner needs
+        JavaScript; the schedule and wake-window pages above do not.</small></p>
     </main>
-  </noscript>
+  </div>
 
   <script type="module" src="/src/main.ts"></script>
 </body>

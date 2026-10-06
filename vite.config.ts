@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { buildAgePages, hubBracketRows } from './src/content/agePages'
-import { renderContentPages, renderSitemap } from './src/content/renderContentPage'
+import { escapeHtml, renderContentPages, renderSitemap } from './src/content/renderContentPage'
 import { buildWakeWindowPages, wakeWindowChartRows } from './src/content/wakeWindowPages'
 
 /** Paths the generated content pages own. Keep in step with the navigation
@@ -17,6 +17,17 @@ function allContentPages() {
   const pages = buildAgePages()
   const wakeWindows = buildWakeWindowPages(pages)
   return renderContentPages(pages, hubBracketRows(pages), wakeWindows, wakeWindowChartRows(wakeWindows))
+}
+
+/** Fill the homepage's static link lists (index.html) from the same page data
+ * the content pages are built from, so a new age page shows up there too. */
+function homepageLinkLists(html: string): string {
+  const pages = buildAgePages()
+  const list = (items: { path: string; heading: string }[]) =>
+    items.map((p) => `        <li><a href="${p.path}">${escapeHtml(p.heading)}</a></li>`).join('\n')
+  return html
+    .replace('<!--sleep-schedule-links-->', list(pages))
+    .replace('<!--wake-window-links-->', list(buildWakeWindowPages(pages)))
 }
 
 // SEO clusters 1 and 2 (docs/research/seo-topic-clusters.md): emit the static
@@ -52,6 +63,7 @@ function wakeWindowsContentPages(): Plugin {
         res.end(match.html)
       })
     },
+    transformIndexHtml: homepageLinkLists,
     generateBundle() {
       const emitted = allContentPages()
 

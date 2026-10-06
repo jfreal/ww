@@ -31,7 +31,7 @@ describe('renderAgePage', () => {
     it('carries a title, description, and self-referencing canonical', () => {
         // The title carries an ampersand, so this also pins that it is escaped.
         expect(html).toContain(`<title>${escapeHtml(page.title)}</title>`)
-        expect(html).toContain('&amp; total sleep</title>')
+        expect(html).toContain('&amp; wake windows</title>')
         expect(html).toContain(`<meta name="description" content="${escapeHtml(page.description)}" />`)
         expect(html).toContain(`<link rel="canonical" href="${SITE_ORIGIN}${page.path}" />`)
     })

@@ -722,14 +722,16 @@ export function buildAgePage(page: AgePageDefinition, index: number, pages: AgeP
         // Hyphenated in the title tag, spaced in the H1: both spellings are
         // searched, and this way the page carries each once without repeating
         // the phrase twice in the same element.
-        title: `${page.titleLabel ?? `${page.months}-month-old`} sleep schedule: sample day, wake windows & total sleep`,
+        // Kept under ~60 characters (SERP truncation), keyword first.
+        title: `${page.titleLabel ?? `${page.months}-month-old`} sleep schedule: sample day & wake windows`,
         heading: sentenceCase(`${displayLabel(page)} sleep schedule`),
         label: displayLabel(page),
         dayLabel: page.label ?? `${page.months}-month-old`,
+        // Kept under ~155 characters so the SERP snippet is not cut off.
         description:
-            `A sample ${displayLabel(page)} sleep schedule with clock times, wake windows of `
-            + `${bracket.wwTime[0]}–${bracket.wwTime[1]} minutes, and ${bracket.daySleep[0]}–${bracket.daySleep[1]} h `
-            + `of daytime sleep — built from cited guidance, then adjustable in the free planner.`,
+            `A sample ${displayLabel(page)} sleep schedule: clock times, ${bracket.wwTime[0]}–${bracket.wwTime[1]} `
+            + `minute wake windows, ${bracket.daySleep[0]}–${bracket.daySleep[1]} h of day sleep. `
+            + `From cited guidance; tweak it in the free planner.`,
         path: `${CLUSTER_BASE}/${page.slug}/`,
         url: `${SITE_ORIGIN}${CLUSTER_BASE}/${page.slug}/`,
         rows,

@@ -308,10 +308,10 @@ ${sourcesBlock()}
 
 export function renderHubPage(pages: AgePageModel[], bracketRows: HubBracketRow[]): string {
     const path = `${CLUSTER_BASE}/`
-    const title = 'Baby sleep schedules by age — wake windows, naps & total sleep'
+    const title = 'Baby sleep schedules by age: wake windows, naps & sleep'
     const description =
-        'Sample sleep schedules by age with clock times, wake window lengths, nap counts, and total '
-        + 'sleep from cited guidance — then build your own in the free planner.'
+        'Sample sleep schedules by age with clock times, wake windows, nap counts, and total sleep '
+        + 'from cited guidance. Then build your own in the free planner.'
 
     const bracketTable = bracketRows
         .map(
@@ -487,8 +487,8 @@ export function renderWakeWindowHub(pages: WakeWindowPageModel[], rows: WakeWind
     const path = `${WAKE_WINDOW_BASE}/`
     const title = 'Wake windows by age: how long babies stay awake between naps'
     const description =
-        'How long a baby can comfortably stay awake at each age, from newborn to two years, with the '
-        + 'published ranges, a sample day for each age, and a free planner that turns them into clock times.'
+        'How long a baby can comfortably stay awake at each age, newborn to two years: published ranges, '
+        + 'a sample day per age, and a free planner for clock times.'
 
     const spokes = pages
         .map((page) => `      <li><a href="${page.path}">${escapeHtml(page.heading)}</a> — ${escapeHtml(page.rangeLabel)}</li>`)
