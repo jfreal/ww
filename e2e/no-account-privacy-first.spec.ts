@@ -61,6 +61,9 @@ test.describe('No-Account, Privacy-First [@feature:no-account-privacy-first]', (
       expect(dataLayer).toContain('"page_referrer":"https://wakewindows.guru/"');
       expect(dataLayer).not.toContain('bd=');
       expect(dataLayer).not.toContain('2026-03-01');
+      // The panel promises no ad trackers, so GA's ad features stay off.
+      expect(dataLayer).toContain('"allow_google_signals":false');
+      expect(dataLayer).toContain('"allow_ad_personalization_signals":false');
     });
   });
 });

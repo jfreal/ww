@@ -27,7 +27,7 @@ Baby data is intimate — sleep, feeding, health, a child's name and birthday. P
 ## Our approach (spec)
 - **No sign-up to get a full plan.** State lives in the URL; the plan *is* the link. There is no server-side profile.
 - **Local-first:** compute and store on-device / in-URL. No server-side PII by default. No ad SDKs, no data brokers, no selling.
-- A plain-English **"What we don't collect"** page (a deliberate contrast to Glow's fine print): no name required, no account, no location, no ad trackers. The one third party is Google Analytics for page-view counts, sent as path only (no query string, so no plan or birthday) — see `public/gtag-init.js`.
+- A plain-English **"What we don't collect"** page (a deliberate contrast to Glow's fine print): no name required, no account, no precise location, no ad trackers. The one third party is Google Analytics for page-view counts. Its page URL and referrer are sent as path only (no query string, so no plan or birthday), but GA4 also gets standard request metadata: browser/device details, an approximate location derived from the IP address (Google says it does not store the IP), and a client ID in a first-party `_ga` cookie. Google signals and ad-personalization signals are off. The panel discloses all of this — see `public/gtag-init.js`.
 - If cross-device sync ever ships, it is **opt-in** and clearly separated from core use.
 
 ## Scope — MVP

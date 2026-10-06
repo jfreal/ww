@@ -27,7 +27,8 @@
 
   gtag('js', new Date())
   gtag('set', { page_location: pathOnly(location.href), page_referrer: pathOnly(document.referrer) })
-  gtag('config', id)
+  // No cross-device/ads data: the privacy panel promises no ad trackers.
+  gtag('config', id, { allow_google_signals: false, allow_ad_personalization_signals: false })
 
   var script = document.createElement('script')
   script.async = true
