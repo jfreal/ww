@@ -18,10 +18,49 @@ test.describe('No-Account, Privacy-First [@feature:no-account-privacy-first]', (
     await page.goto('/?tab=settings');
     await page.getByText("What we don't collect").click();
     await expect(page.getByText('No account', { exact: true })).toBeVisible();
-    await expect(page.getByText('No data sold — because none is collected')).toBeVisible();
+    await expect(page.getByText('No data sold', { exact: true })).toBeVisible();
+    // Analytics is disclosed, not denied.
+    await expect(page.getByText(/Google Analytics counts page visits/)).toBeVisible();
     await expect(page.getByText('Local-first', { exact: true })).toBeVisible();
     await expect(page.getByText('No AI training', { exact: true })).toBeVisible();
     // The honest caveat about birthdays living in shared links.
     await expect(page.getByText(/anyone you send the link to/i)).toBeVisible();
+  });
+
+  test('analytics stays off outside the production host', async ({ page }) => {
+    await page.goto('/?bd=2026-03-01&s=7-2/2/2/2-7');
+    await expect(page.getByRole('heading', { name: 'Rest of the day', exact: true })).toBeVisible();
+    expect(await page.evaluate(() => 'dataLayer' in window)).toBe(false);
+    await expect(page.locator('script[src*="googletagmanager"]')).toHaveCount(0);
+  });
+
+  test.describe('on the production host', () => {
+    // A stale worker from another test would answer instead of the route below.
+    test.use({ serviceWorkers: 'block' });
+
+    test('Google Analytics gets the path only, never the plan in the query string', async ({ page, baseURL }) => {
+      // Serve the local build under the real hostname, so gtag-init.js runs
+      // its production branch; stub gtag.js so nothing reaches Google.
+      await page.route('https://wakewindows.guru/**', async (route) => {
+        const url = new URL(route.request().url());
+        const response = await route.fetch({ url: `${baseURL}${url.pathname}${url.search}` });
+        await route.fulfill({ response });
+      });
+      await page.route('https://www.googletagmanager.com/**', (route) =>
+        route.fulfill({ contentType: 'text/javascript', body: '' }));
+
+      // Referrer carries a plan too: the hop from the planner to a content page.
+      await page.goto('https://wakewindows.guru/sleep-schedule/4-month-old/', {
+        referer: 'https://wakewindows.guru/?bd=2026-03-01&s=7-2/2/2/2-7',
+      });
+      await expect(page.locator('script[src^="https://www.googletagmanager.com/gtag/js?id=G-5X9ECGGVGZ"]')).toHaveCount(1);
+
+      const dataLayer = await page.evaluate(() =>
+        JSON.stringify((window as any).dataLayer.map((args: IArguments) => Array.from(args))));
+      expect(dataLayer).toContain('"page_location":"https://wakewindows.guru/sleep-schedule/4-month-old/"');
+      expect(dataLayer).toContain('"page_referrer":"https://wakewindows.guru/"');
+      expect(dataLayer).not.toContain('bd=');
+      expect(dataLayer).not.toContain('2026-03-01');
+    });
   });
 });

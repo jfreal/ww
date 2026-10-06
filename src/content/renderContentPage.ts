@@ -106,6 +106,7 @@ function shell({ title, description, path, body, jsonLd }: PageShell): string {
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}" />
   <link rel="canonical" href="${url}" />
+  <script src="/gtag-init.js" async></script>
   <link rel="icon" type="image/png" href="/pwa-192x192.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta property="og:type" content="article" />
