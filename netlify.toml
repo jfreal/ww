@@ -6,6 +6,11 @@
   # Tailwind v4's @tailwindcss/oxide requires Node >= 20
   NODE_VERSION = "20"
 
+# public/a0b4cc5a5653b1278fbe1db5a316aaeb.txt is the IndexNow key file. The
+# daily IndexNow job in jfreal/johnf.build fetches it from the site root to
+# verify ownership before submitting changed sitemap URLs. The file name and its
+# contents must match, and no redirect or SPA fallback may cover that path.
+
 # F07 Offline Mode: the service worker and manifest must revalidate on every
 # request, or a stale worker pins old logic/citations past a deploy. Hashed
 # assets under /assets are safe to cache forever.
