@@ -41,7 +41,7 @@ Live SERP checks for `wake windows by age` and `6 month old sleep schedule` retu
 ## Brand filter
 - **Show your work.** Every page carries the Tier-1 sources and states plainly that "wake window" is a Tier-2 practice-based heuristic, not a term from the sleep-medicine literature.
 - **Ranges, not a stopwatch.** Nap times print as windows rounded to 5-minute marks; the copy says anywhere inside the window counts.
-- **No account, no AI.** The pages are inert HTML — no tracking, no third-party fonts or assets, nothing that phones home.
+- **No account, no AI, no ad trackers.** The pages are plain HTML with no third-party fonts. The one script they load is `/gtag-init.js`, which loads Google Analytics for page-view counts, and only on the production host (`wakewindows.guru`): page and referrer go out as path only, and Google signals and ad-personalization signals are off. The disclosure lives with the privacy promise in [G01](G01-no-account-privacy-first.md).
 
 ## Scope — shipped
 - **Cluster 1** — hub + 14 age spokes: newborn, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 and 18 months.
@@ -62,5 +62,5 @@ Search Console is **not connected** to the OpenSEO project, so there is currentl
 - `src/content/agePages.ts` — cluster-1 definitions and the model-derived schedule
 - `src/content/wakeWindowPages.ts` — cluster-2 definitions, borrowing each age's windows from cluster 1
 - `src/content/renderContentPage.ts` — HTML, structured data, sitemap
-- `vite.config.ts` — `wakeWindowsContentPages()` (build emit + dev middleware)
+- `vite.config.ts` — `wakeWindowsContentPages()` (build emit + dev middleware, plus `homepageLinkLists`, which fills the homepage's static link lists in `index.html` from the same page data)
 - `e2e/static-content-pages.spec.ts` — no-JS render, canonical, CTA round-trip, SW fallback

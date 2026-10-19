@@ -308,7 +308,7 @@
     "summary": "Calm, cited explainer: 4-month change as permanent progression, 8–10 month window, and the honestly weakly-supported 12/18/24-month regressions",
     "sources": [
       "src/components/RegressionExplainer.vue:5",
-      "src/models/Citations.test.ts:59"
+      "src/models/Citations.test.ts:60"
     ],
     "tests": [
       "e2e/regression-progression-explainer.spec.ts:1"
@@ -323,7 +323,7 @@
     "summary": "Neutral, cited menu of sleep-training methods (no ranking) with Tier-1 efficacy + long-term-safety evidence, the Middlemiss cortisol-myth correction in context, and a prominent under-4-month readiness caveat",
     "sources": [
       "src/components/SleepTrainingOverview.vue:5",
-      "src/models/Citations.test.ts:86"
+      "src/models/Citations.test.ts:134"
     ],
     "tests": [
       "e2e/sleep-training-overview.spec.ts:1"
